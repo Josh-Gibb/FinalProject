@@ -7,10 +7,13 @@ const { default: mongoose } = require("mongoose");
 const connectDB = require("./config/dbConfig");
 const { logger } = require("./middleware/logEvents");
 const errorHandler = require("./middleware/errorHandler");
+const corsOptions = require("./config/corsOptions");
 
 connectDB();
 
 app.use(logger);
+
+app.use(cors(corsOptions));
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
