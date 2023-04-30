@@ -1,6 +1,7 @@
 const WhiteList = [
     "http://localhost:3000",
-    "https://Josh-Gibb-FinalProject.glitch.me"
+    "https://Josh-Gibb-FinalProject.glitch.me",
+    "nostalgic-quilled-cephalopod.glitch.me"
 ];
 
 const corsOptions = {
