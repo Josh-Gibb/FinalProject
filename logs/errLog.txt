@@ -1,0 +1,23 @@
+04-26-2023 	 01:18:40 	 1972d0e5-f236-48ec-b7e7-393fb82e1708 	 TypeError 	 data.states.find is not a function 
+04-26-2023 	 01:19:17 	 d0effccd-3721-491a-bc8e-5b36e5b64af5 	 TypeError 	 data.states.find is not a function 
+04-26-2023 	 01:19:18 	 8f934564-5ce9-4a53-ab7c-2cef51f0cd5d 	 TypeError 	 data.states.find is not a function 
+04-26-2023 	 01:19:19 	 d7a3fd86-b48a-4441-a3aa-3fb9736f89de 	 TypeError 	 data.states.find is not a function 
+04-26-2023 	 01:19:19 	 4efe453b-0e93-4ce6-a43a-099e45b536cf 	 TypeError 	 data.states.find is not a function 
+04-26-2023 	 01:19:19 	 c05871d3-e7ad-40ed-8a09-a21660bf24c1 	 TypeError 	 data.states.find is not a function 
+04-26-2023 	 01:22:39 	 158962ca-50be-4b37-9472-9de2b346d142 	 TypeError 	 data.states.find is not a function 
+04-26-2023 	 01:22:40 	 907eaacf-daab-4f7d-8601-fb2eaa129d7a 	 TypeError 	 data.states.find is not a function 
+04-26-2023 	 01:22:40 	 54180406-41dc-4e94-98f3-79c6533f3b02 	 TypeError 	 data.states.find is not a function 
+04-26-2023 	 01:24:30 	 794a9e32-e27f-450a-a336-b7f98192a5e5 	 TypeError data.states.find is not a function 
+04-26-2023 	 01:25:12 	 c278c7a8-874a-4dce-be1b-646e916910f4 	 TypeError data.states.find is not a function 
+04-26-2023 	 09:39:57 	 4663224e-59b4-4909-bd58-4c7d9603be5c 	 TypeError data.states.find is not a function 
+04-26-2023 	 09:40:59 	 934f7e11-b71c-4d6f-955d-532ef79734aa 	 TypeError data.states.find is not a function 
+04-26-2023 	 09:41:46 	 bdd2c5da-05d6-4364-bed8-1c2a9234d701 	 TypeError data.states.find is not a function 
+04-26-2023 	 09:42:27 	 4bfb228a-f4b7-462e-8a9b-b3563009f225 	 TypeError data.states.find is not a function 
+04-26-2023 	 09:48:48 	 225ddba6-11a3-44e3-8c56-9e39c4f55866 	 ReferenceError state is not defined 
+04-26-2023 	 09:49:15 	 497f141e-3e77-4707-89ec-1b23174898a3 	 ReferenceError state is not defined 
+04-26-2023 	 09:56:43 	 2737a4f8-6d36-4c22-bfa1-9d395b80a5f7 	 TypeError Assignment to constant variable. 
+04-28-2023 	 07:39:14 	 c574bd62-bc61-46b0-964b-f7c33aa06d14 	 ReferenceError state is not defined 
+04-28-2023 	 07:42:37 	 eb84e5c5-eee1-433a-8413-7cae6a939332 	 TypeError Cannot read properties of undefined (reading 'find') 
+04-28-2023 	 07:43:03 	 3fd7e122-ffe2-4c93-a4cb-d85df9d4b05c 	 TypeError AK is not a function 
+04-28-2023 	 07:44:05 	 4ec42dd0-28ea-4c78-b254-8bad473b27fe 	 TypeError data.states.findOne is not a function 
+04-29-2023 	 08:00:35 	 d3f50732-a9cf-47fb-8f54-559311a64959 	 SyntaxError Unexpected token } in JSON at position 63 
