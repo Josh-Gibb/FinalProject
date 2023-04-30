@@ -408,3 +408,5 @@
 04-29-2023 	 11:04:11 	 45f9d5b1-099a-4350-ae80-10c6ba72d905 	 GET 	 undefined 	 /states/KS/capital 
 04-29-2023 	 11:04:14 	 92c169b0-2233-447c-8f89-b6b6208fbd53 	 GET 	 undefined 	 /states/KS/populatiob 
 04-29-2023 	 11:04:18 	 eba965a5-3d66-4d16-b632-87dc23159398 	 GET 	 undefined 	 /states/KS/population 
+04-29-2023 	 11:35:55 	 1389e756-2ea0-4e19-a9a3-e7bd09ba6951 	 GET 	 undefined 	 /states/ak 
+04-29-2023 	 11:36:05 	 308b9353-d918-4100-bc63-caad0a147bc7 	 GET 	 undefined 	 /states/al 
