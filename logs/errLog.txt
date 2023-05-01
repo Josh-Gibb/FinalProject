@@ -21,3 +21,11 @@
 04-28-2023 	 07:43:03 	 3fd7e122-ffe2-4c93-a4cb-d85df9d4b05c 	 TypeError AK is not a function 
 04-28-2023 	 07:44:05 	 4ec42dd0-28ea-4c78-b254-8bad473b27fe 	 TypeError data.states.findOne is not a function 
 04-29-2023 	 08:00:35 	 d3f50732-a9cf-47fb-8f54-559311a64959 	 SyntaxError Unexpected token } in JSON at position 63 
+05-01-2023 	 02:03:26 	 b01f0791-e810-467e-b02e-d5a450de47b8 	 Error Cannot set headers after they are sent to the client 
+05-01-2023 	 02:04:33 	 493c8ec2-7c63-4797-a50f-a1d5ece58696 	 Error Cannot set headers after they are sent to the client 
+05-01-2023 	 02:05:28 	 b8fa7d0a-741e-4af5-a651-97059895d6dc 	 Error Cannot set headers after they are sent to the client 
+05-01-2023 	 02:10:29 	 cedc480c-1afe-46be-9c20-1503c8467d29 	 TypeError console.llog is not a function 
+05-01-2023 	 02:30:53 	 31af6934-fb32-439f-ba0e-d501b412f9f7 	 TypeError Cannot read properties of undefined (reading 'state') 
+05-01-2023 	 02:31:18 	 c2b029fe-07a5-4f24-bc52-23677cf4f0d2 	 TypeError Cannot read properties of undefined (reading 'state') 
+05-01-2023 	 02:33:00 	 77d2bf02-62e8-4296-b93b-2f0cdb381cd7 	 TypeError data.states.findOne is not a function 
+05-01-2023 	 02:33:32 	 4b25a2fb-5ad2-4d6c-bf33-cbbe06684f31 	 TypeError data.states.findOne is not a function 

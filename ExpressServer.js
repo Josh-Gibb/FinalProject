@@ -9,6 +9,7 @@ const connectDB = require("./config/dbConfig");
 const { logger } = require("./middleware/logEvents");
 const errorHandler = require("./middleware/errorHandler");
 const corsOptions = require("./config/corsOptions");
+const { validateState } = require("./middleware/stateAuthenticator");
 
 connectDB();
 

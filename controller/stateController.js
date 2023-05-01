@@ -40,28 +40,18 @@ const getContigousStates = (req, res) => {
 };
 
 const getState = async (req, res) => {
-	let code = req.params.state.toUpperCase();
+	let code = req.params.state;
 	const state = data.states.find((state) => state.code === code);
 	const facts = await funFacts.findOne({ stateCode: code });
 	if (facts) {
 		state.funfacts = facts.funfacts;
 	}
-	if (!state) {
-		return res
-			.status(400)
-			.json({ message: `State ${stateCode} is not found` });
-	}
 	res.json(state);
 };
 
 const getCaptial = (req, res) => {
-	let stateCode = req.params.state.toUpperCase();
+	let stateCode = req.params.state;
 	const state = data.states.find((state) => state.code === stateCode);
-	if (!state) {
-		return res
-			.status(400)
-			.json({ message: `State ${stateCode} is not found` });
-	}
 	const stateWithCapital = {
 		state: String,
 		capital: String,
@@ -73,13 +63,8 @@ const getCaptial = (req, res) => {
 };
 
 const getNickname = (req, res) => {
-	let stateCode = req.params.state.toUpperCase();
+	let stateCode = req.params.state;
 	const state = data.states.find((state) => state.code === stateCode);
-	if (!state) {
-		return res
-			.status(400)
-			.json({ message: `State ${stateCode} is not found` });
-	}
 	const stateWithNickname = {
 		state: String,
 		nickname: String,
@@ -90,13 +75,8 @@ const getNickname = (req, res) => {
 };
 
 const getPopulation = (req, res) => {
-	let stateCode = req.params.state.toUpperCase();
+    let stateCode = req.params.state;
 	const state = data.states.find((state) => state.code === stateCode);
-	if (!state) {
-		return res
-			.status(400)
-			.json({ message: `State ${stateCode} is not found` });
-	}
 	const stateWithPopulation = {
 		state: String,
 		population: String,
@@ -107,13 +87,8 @@ const getPopulation = (req, res) => {
 };
 
 const getAdmission = (req, res) => {
-	let stateCode = req.params.state.toUpperCase();
+    let stateCode = req.params.state;
 	const state = data.states.find((state) => state.code === stateCode);
-	if (!state) {
-		return res
-			.status(400)
-			.json({ message: `State ${stateCode} is not found` });
-	}
 	const stateWithAdmission = {
 		state: String,
 		admitted: Date,
