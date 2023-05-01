@@ -410,3 +410,11 @@
 04-29-2023 	 11:04:18 	 eba965a5-3d66-4d16-b632-87dc23159398 	 GET 	 undefined 	 /states/KS/population 
 04-29-2023 	 11:35:55 	 1389e756-2ea0-4e19-a9a3-e7bd09ba6951 	 GET 	 undefined 	 /states/ak 
 04-29-2023 	 11:36:05 	 308b9353-d918-4100-bc63-caad0a147bc7 	 GET 	 undefined 	 /states/al 
+05-01-2023 	 01:23:34 	 648633ad-e810-44b1-b077-2146b3bc2320 	 GET 	 undefined 	 /states/?contig=false 
+05-01-2023 	 01:23:37 	 4bbd2c4d-4713-40f6-8676-02dfcfe4d736 	 GET 	 undefined 	 /sta 
+05-01-2023 	 01:24:31 	 3db0678a-a360-4560-a57f-0ce156a1f4e8 	 GET 	 undefined 	 /sta 
+05-01-2023 	 01:24:31 	 3bc71ea0-ce49-4417-ba88-4b9e2ab4065f 	 GET 	 undefined 	 /css/style.css 
+05-01-2023 	 01:24:34 	 ef4575bd-f5cd-413f-9f64-339346cba5ef 	 GET 	 undefined 	 / 
+05-01-2023 	 01:24:34 	 eff64cce-6007-429d-9354-4fb1ac341839 	 GET 	 undefined 	 /css/style.css 
+05-01-2023 	 01:24:39 	 cb2d0fcd-6a5f-40a4-8f64-89196062ebd8 	 GET 	 undefined 	 /states 
+05-01-2023 	 01:24:49 	 16827b94-0d54-447f-ad71-eb25339cb8eb 	 GET 	 undefined 	 /states 
