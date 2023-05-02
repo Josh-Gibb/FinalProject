@@ -57,3 +57,8 @@
 05-01-2023 	 03:17:05 	 69e10732-0fde-4e8e-aa78-19d0ad200293 	 SyntaxError Unexpected string in JSON at position 24 
 05-01-2023 	 03:48:29 	 76bcada5-bccc-4ebe-8daa-7e6434a1431f 	 SyntaxError Unexpected token } in JSON at position 12 
 05-02-2023 	 10:19:43 	 bc3cafbc-c3c5-4dbe-a3b5-eb2738f29f6b 	 SyntaxError Unexpected token ] in JSON at position 71 
+05-02-2023 	 11:58:45 	 c0d01c46-9dac-4257-a192-4d811b2c2071 	 TypeError state.population.length is not a function 
+05-02-2023 	 11:59:41 	 63476a01-706c-420f-81ff-915c8294539d 	 TypeError len.length is not a function 
+05-02-2023 	 12:01:14 	 52c78190-00fe-4caa-949d-6ed4ece0502e 	 TypeError pop.length is not a function 
+05-02-2023 	 12:01:36 	 757c0323-86aa-4262-af34-51e59989be9a 	 TypeError pop.length is not a function 
+05-02-2023 	 12:02:57 	 a852a172-26cd-40dc-ad9c-845e715f29e6 	 TypeError pop.length is not a function 

@@ -81,7 +81,21 @@ const getPopulation = (req, res) => {
 		population: String,
 	};
 	stateWithPopulation.state = state.state;
-	stateWithPopulation.population = state.population;
+    let reversePopulation = "", population = "";
+    const pop = "" + state.population;
+    for(let i = 0; i < pop.length; i++){
+        const count = i + 1;
+        if(count%3 === 0 && count != pop.length){
+            reversePopulation = reversePopulation + pop.charAt(pop.length-i-1) + ",";
+        }
+        else{
+            reversePopulation = reversePopulation + pop.charAt(pop.length-i-1);
+        }
+    }
+    for(let i = reversePopulation.length-1; i >= 0; i--){
+        population = population + reversePopulation.charAt(i);
+    }
+	stateWithPopulation.population = population;
 	res.status(201).json(stateWithPopulation);
 };
 
