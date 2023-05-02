@@ -12,7 +12,9 @@ const getAllStates = async (req, res) => {
 		const facts = await funFacts
 			.findOne({ stateCode: data.states[i].code })
 			.exec();
-		data.states[i].funfacts = facts.funfacts;
+        if(facts){
+		    data.states[i].funfacts = facts.funfacts;
+        }
 	}
 	if (req.query.contig) {
 		getContigousStates(req, res);
