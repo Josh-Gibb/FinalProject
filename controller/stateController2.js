@@ -7,17 +7,30 @@ const data = {
 
 const funFacts = require("../model/state");
 
+const populateStatesWithFacts = (pos, facts) => {
+	if (facts) {
+		if (data.states[pos].funfacts) {
+			data.states[pos]["funfacts"] = data.states[pos][
+				"funfacts"
+			].concat(facts.funfacts);
+		} else {
+			data.states[pos]["funfacts"] = facts.funfacts;
+		}
+	}
+};
+
 const getAllStates = async (req, res) => {
 	for (let i = 0; i < data.states.length; i++) {
 		const facts = await funFacts
 			.findOne({ stateCode: data.states[i].code })
 			.exec();
-		data.states[i].funfacts = facts;
+		populateStatesWithFacts(i, facts);
 	}
 	if (req.query.contig) {
 		getContigousStates(req, res);
+		return;
 	}
-	res.status(201).json(data.states);
+	await res.json(data.states);
 };
 
 const getContigousStates = (req, res) => {
@@ -33,15 +46,15 @@ const getContigousStates = (req, res) => {
 			}
 		}
 	});
-	res.status(201).json(contigousStates);
+	res.json(contigousStates);
 };
 
 const getState = async (req, res) => {
 	let code = req.params.state;
-	const state = data.states.find((state) => code === state.code);
+	const pos = getPosition(code);
 	const facts = await funFacts.findOne({ stateCode: code });
-	state.funfacts = facts;
-	res.status(201).json(state);
+	populateStatesWithFacts(pos, facts);
+	res.json(data.states[pos]);
 };
 
 const getCaptial = (req, res) => {
@@ -54,7 +67,7 @@ const getCaptial = (req, res) => {
 
 	stateWithCapital.state = state.state;
 	stateWithCapital.capital = state.capital_city;
-	res.status(201).json(stateWithCapital);
+	res.json(stateWithCapital);
 };
 
 const getNickname = (req, res) => {
@@ -66,7 +79,7 @@ const getNickname = (req, res) => {
 	};
 	stateWithNickname.state = state.state;
 	stateWithNickname.nickname = state.nickname;
-	res.status(201).json(stateWithNickname);
+	res.json(stateWithNickname);
 };
 
 const getPopulation = (req, res) => {
@@ -78,7 +91,7 @@ const getPopulation = (req, res) => {
 	};
 	stateWithPopulation.state = state.state;
 	stateWithPopulation.population = state.population;
-	res.status(201).json(stateWithPopulation);
+	res.json(stateWithPopulation);
 };
 
 const getAdmission = (req, res) => {
@@ -90,19 +103,26 @@ const getAdmission = (req, res) => {
 	};
 	stateWithAdmission.state = state.state;
 	stateWithAdmission.admitted = state.admission_date;
-	res.status(201).json(stateWithAdmission);
+	res.json(stateWithAdmission);
 };
 
 const getFunfact = async (req, res) => {
 	const code = req.params.state;
+	let facts = [];
+	data.states.forEach((state) => {
+		if (state.funfacts && state.code == code) {
+			facts = state.funfacts;
+		}
+	});
 	const dbFacts = await funFacts.findOne({ stateCode: code }).exec();
-	if (dbFacts) {
+	if (dbFacts) facts = facts.concat(dbFacts.funfacts);
+	if (facts.length != 0) {
 		const randomFact = {
-			funfact: dbFacts.funfacts[Math.floor(Math.random() * dbFacts.funfacts.length)],
+			funfact: facts[Math.floor(Math.random() * facts.length)],
 		};
-        return res.status(201).json(randomFact);
+		return res.json(randomFact);
 	}
-	return res.status(400).json("No funfacts for the state");
+	return res.json({ message: "No funfacts for the state" });
 };
 
 const insertFunfacts = async (req, res) => {
@@ -127,8 +147,9 @@ const insertFunfacts = async (req, res) => {
 				stateCode: code,
 				funfacts: facts,
 			});
+			console.log(result);
 		} catch (error) {
-			res.status(400).json({ message: error.message });
+			res.status({ message: error.message });
 		}
 	}
 	res.status(201).json({ success: `Added ${facts} to ${code}` });
@@ -150,10 +171,40 @@ const updateFunfact = async (req, res) => {
 	index--;
 	const code = req.params.state;
 	const state = await funFacts.findOne({ stateCode: code });
+	const pos = getPosition(code);
+	const fact = data.states[pos].funfacts;
+	if (!fact) {
+		await dbData(index, state, funfact);
+		return;
+	} else {
+		const factLength = fact.length - 1;
+		if (index > factLength) {
+			index = index - factLength;
+			await dbData(res, index, state, funfact);
+		} else {
+			data.states[pos].funfacts[index] = funfact;
+			res.json(
+				`index ${++index} changed to ${
+					data.states[pos].funfacts[--index]
+				} `
+			);
+		}
+	}
+};
+
+const getPosition = (code) => {
+	for (let i = 0; i < data.states.length; i++) {
+		if (data.states[i].code === code) {
+			return i;
+		}
+	}
+};
+
+const dbData = async (res, index, state, funfact) => {
 	if (state && index < state.funfacts.length) {
 		state.funfacts[index] = funfact;
 		const result = await state.save();
-		return res.status(201).json({success: `Updated index ${++index} to ${result}`});
+		return res.json(result);
 	} else {
 		return res.status(400).json({ message: `index was out of range` });
 	}
@@ -170,15 +221,30 @@ const deleteFunfact = async (req, res) => {
 	index--;
 	const code = req.params.state;
 	const state = await funFacts.findOne({ stateCode: code });
-    if(state.funfacts.length === 0){
-        res.status(400).json({message: `No funfacts found for ${code}`});
-    }
-	if (index < state.funfacts.length) {
-		const fact = state.funfacts.splice(index, 1);
-		await state.save();
-		res.status(201).json({Success: `Deleted index ${fact} from ${code}`});
+	const pos = getPosition(code);
+	const facts = data.states[pos].funfacts;
+	if (facts && facts.length !== 0) {
+        const len = state.funfacts.length;
+		factLength = facts.length - len;
+        console.log(`${factLength} \n ${len} \n ${index}`);
+		if (index > factLength) {
+			await deleteFact(res, state, index - factLength);
+		} else {
+			const fact = data.states[pos].funfacts.splice(index, 1);
+			return res.json(`${fact} was deleted`);
+		}
 	} else {
-		res.status(400).json({ message: `${++index} was out of range` });
+		await deleteFact(res, state, index);
+	}
+};
+
+const deleteFact = async (res, state, index) => {
+	if (index < state.funfacts.length) {
+		state.funfacts.splice(index, 1);
+		const db = await state.save();
+		res.json(db);
+	} else {
+		res.status(400).json({ message: `${index} was out of range` });
 	}
 };
 

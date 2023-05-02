@@ -29,3 +29,30 @@
 05-01-2023 	 02:31:18 	 c2b029fe-07a5-4f24-bc52-23677cf4f0d2 	 TypeError Cannot read properties of undefined (reading 'state') 
 05-01-2023 	 02:33:00 	 77d2bf02-62e8-4296-b93b-2f0cdb381cd7 	 TypeError data.states.findOne is not a function 
 05-01-2023 	 02:33:32 	 4b25a2fb-5ad2-4d6c-bf33-cbbe06684f31 	 TypeError data.states.findOne is not a function 
+05-01-2023 	 02:44:45 	 54f57dad-ebda-480b-b5b4-f4ce76a6e15e 	 SyntaxError Unexpected token f in JSON at position 1 
+05-01-2023 	 02:46:59 	 b231ced7-2e8a-480f-a623-ae3e3a3e02e5 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:19 	 2b4fa7c8-9cd3-4092-b4fa-dfd143b7dc71 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:20 	 db7ca774-385e-4274-9356-eefbe6b5e1d7 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:20 	 9fbf6e5f-727f-4aed-bf40-c38d38b29d8a 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:21 	 40129806-e739-4e22-9e12-8f21e4a6df5f 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:21 	 0a060457-b11c-4d3e-b275-d1f1400f7611 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:21 	 9cf418f2-4099-4f61-8240-98e36a00546f 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:21 	 bf0b3161-85a6-496d-ac65-f588c06b0904 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:22 	 86d2b33f-3635-4d00-8791-d42528426330 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:22 	 ddd2149e-bac9-49c1-9ef8-88526154776b 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:22 	 66b784be-81e7-413c-b65c-c78c5f525c47 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:23 	 4cf12739-92ef-41f6-9af1-789f00d97ccc 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:23 	 205096b1-1ab9-4cca-a7ea-67780a885b22 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:23 	 effc8fa0-c8b3-4db6-b6a5-647b2154e908 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:24 	 4b78ed37-9402-4e6b-ab29-3ba02d0202a0 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:24 	 5d958974-8a6d-428e-b3bb-3165a715f96b 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:24 	 974dd0cf-0a1a-48fb-b15c-4295e170bc64 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:24 	 a5bae157-c7e8-448f-90e7-763442a93500 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:28 	 3702def6-f4f9-44d9-a873-95de64ae9c91 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:29 	 575977fe-c256-4207-9b0d-1356cd32cbd1 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:29 	 160c358b-459c-465c-93fe-0e8cb8aa4a15 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:31 	 7e491f85-28e3-48bf-b921-aaca367df41d 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:32 	 eaa49116-5bce-4cd9-ab0f-7d4d73087994 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 02:47:42 	 d75c3d82-ae76-4081-aecd-c8f043f12981 	 SyntaxError Unexpected end of JSON input 
+05-01-2023 	 03:17:05 	 69e10732-0fde-4e8e-aa78-19d0ad200293 	 SyntaxError Unexpected string in JSON at position 24 
+05-01-2023 	 03:48:29 	 76bcada5-bccc-4ebe-8daa-7e6434a1431f 	 SyntaxError Unexpected token } in JSON at position 12 
