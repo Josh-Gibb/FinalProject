@@ -12,7 +12,7 @@ const getAllStates = async (req, res) => {
 		const facts = await funFacts
 			.findOne({ stateCode: data.states[i].code })
 			.exec();
-		data.states[i].funfacts = facts;
+		data.states[i].funfacts = facts.funfacts;
 	}
 	if (req.query.contig) {
 		getContigousStates(req, res);
@@ -40,7 +40,9 @@ const getState = async (req, res) => {
 	let code = req.params.state;
 	const state = data.states.find((state) => code === state.code);
 	const facts = await funFacts.findOne({ stateCode: code });
-	state.funfacts = facts;
+    if(facts){
+	    state.funfacts = facts.funfacts;
+    }
 	res.status(201).json(state);
 };
 
@@ -152,8 +154,8 @@ const updateFunfact = async (req, res) => {
 	const state = await funFacts.findOne({ stateCode: code });
 	if (state && index < state.funfacts.length) {
 		state.funfacts[index] = funfact;
-		const result = await state.save();
-		return res.status(201).json({success: `Updated index ${++index} to ${result}`});
+		await state.save();
+		return res.status(201).json({success: `Updated fact ${++index} in ${code}`});
 	} else {
 		return res.status(400).json({ message: `index was out of range` });
 	}
