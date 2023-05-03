@@ -8,7 +8,6 @@ const { default: mongoose } = require("mongoose");
 const connectDB = require("./config/dbConfig");
 const { logger } = require("./middleware/logEvents");
 const errorHandler = require("./middleware/errorHandler");
-const { validateState } = require("./middleware/stateAuthenticator");
 
 connectDB();
 
