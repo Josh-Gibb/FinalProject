@@ -30,10 +30,10 @@ const insertFunfacts = async (req, res) => {
 				funfacts: facts,
 			});
 		} catch (error) {
-			res.status(400).json({ message: error.message });
+			return res.status(400).json({ message: error.message });
 		}
 	}
-	res.status(201).json({ success: `Added ${facts} to ${code}` });
+	return res.status(201).json({ success: `Added ${facts} to ${code}` });
 };
 
 const updateFunfact = async (req, res) => {
@@ -74,15 +74,15 @@ const deleteFunfact = async (req, res) => {
 	index--;
 	const code = req.params.state;
 	const state = await funFacts.findOne({ stateCode: code });
-	if (state.funfacts.length === 0) {
-		res.status(400).json({ message: `No funfacts found for ${code}` });
+	if (!state) {
+		return res.status(400).json({ message: `No funfacts found for ${code}` });
 	}
 	if (index < state.funfacts.length) {
 		const fact = state.funfacts.splice(index, 1);
 		await state.save();
-		res.status(201).json({ Success: `Deleted index ${fact} from ${code}` });
+		return res.status(201).json({ Success: `Deleted index ${fact} from ${code}` });
 	} else {
-		res.status(400).json({ message: `${++index} was out of range` });
+		return res.status(400).json({ message: `${++index} was out of range` });
 	}
 };
 
