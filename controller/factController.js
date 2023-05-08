@@ -74,7 +74,7 @@ const deleteFunfact = async (req, res) => {
 	index--;
 	const code = req.params.state;
 	const state = await funFacts.findOne({ stateCode: code });
-	if (!state) {
+	if (!state || state.funfacts.length === 0) {
 		return res.status(400).json({ message: `No funfacts found for ${code}` });
 	}
 	if (index < state.funfacts.length) {

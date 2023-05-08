@@ -51,7 +51,7 @@ const getState = async (req, res) => {
 const getFunfact = async (req, res) => {
 	const code = req.params.state;
 	const dbFacts = await funFacts.findOne({ stateCode: code }).exec();
-	if (dbFacts) {
+	if (dbFacts && dbFacts.funfacts.length > 0) {
 		const randomFact = {
 			funfact: dbFacts.funfacts[Math.floor(Math.random() * dbFacts.funfacts.length)],
 		};
